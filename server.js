@@ -14,13 +14,13 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 
-app.post('/',function(req,res){
+app.post('/createStock',function(req,res){
 
      const stockObj=new Stock({
         name:req.body.name,
         symbol:req.body.symbol,
         price:req.body.price,
-    
+
     });
 
 stockObj.save((err)=>{

@@ -1,7 +1,7 @@
 var productTemplate =
-'<h3>Name<%= name %></h3>'+
-'<h3>Price<%= price %></h3>'+
-'<h3>Symbol<%= symbol %></h3>';
+'<h3>Name: <%= name %></h3>'+
+'<h3>Price: <%= price %></h3>'+
+'<h3>Symbol: <%= symbol %></h3>';
 
 var stocks=[];
 
@@ -50,24 +50,38 @@ var getAllProducts= function(){
    });
 
 };
-$('#showTables').click(function(e) {
-        e.preventDefault();
-                    $.ajax({
-                        url: "http://localhost:8890/",
-                        method: 'GET',
-                        success: function (resp) {
-                            console.log(resp);
-                            $('#tables1').html("");
-                            resp.forEach(function(stok){
-
-
-                                $('#tables1').append(`<tr class="tdT"><td class="tdT">${stok.name}</td>+<td class="tdT">${stok.price}+<td class="tdT">${stok.symbol}<button class='delete' idendb='${stok.id}'>DELETE</button></td></tr>`);
-
-                            })
-                        }
-
-      });
-});
+// $('#showTables').click(function(e) {
+//         e.preventDefault();
+//                     $.ajax({
+//                         url: "http://localhost:8890/",
+//                         method: 'GET',
+//                         success: function (resp) {
+//                             console.log(resp);
+//                             $('#tables1').html("");
+//                             resp.forEach(function(stok){
+//
+//
+//                                 $('#tables1').append(`<tr class="tdT"><td class="tdT">${stok.name}</td>+<td class="tdT">${stok.price}+<td class="tdT">${stok.symbol}<button class='delete' idendb='${stok.id}'>DELETE</button></td></tr>`);
+//
+//                             })
+//                         }
+//
+//       });
+// });
+// $('#submit').click(function() {
+//         $.ajax({
+//             url: "http://localhost:8887/",
+//             method: 'POST',
+//             success: function() {
+//                 console.log("yous data is been post")
+//             },
+//             data: {
+//                 description: $('#description').val(),
+//                 status: $('#status').val()
+//             }
+//
+//         });
+//     });
 (function(){
    getAllProducts();
    var form=document.querySelector('form');
@@ -75,7 +89,7 @@ $('#showTables').click(function(e) {
        e.preventDefault();
        var values=getValues();
        console.log(values);
-       fetch('/',{
+       fetch('/createStock',{
            method:'post',
            headers:{
                'Accept':'application/json',
