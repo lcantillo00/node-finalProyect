@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stock</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <form class="form">
+      <div class="food">
+          <label>Name</label>
+          <input type="text" name="namefood">
+      </div>
+      <div class="food">
+          <label>Price</label>
+          <input type="number" name="price">
+      </div>
+      <div class="food">
+          <label>Symbol</label>
+          <input type="text" name="symbol">
+      </div>
+
+      <button>Submit</button>
+      <button id="showTables">Show Stock Products</button>
+
+      <div class="content">
+      <ul class="food-list"></ul>
+       </div>
+
+  </form>
+  <!-- <table id="tables">
+          <tr class="mytr">
+              <td id="tdName">Name</td>
+              <td id="tdPrice"> Price</td>
+              <td id="tdSymbol"> Symbol</td>
+          </tr>
+      </table>
+  </table> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

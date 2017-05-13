@@ -1,0 +1,28 @@
+{
+  "name": "node-finalProyect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon  server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcantillo00/node-finalProyect.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lcantillo00/node-finalProyect/issues"
+  },
+  "homepage": "https://github.com/lcantillo00/node-finalProyect#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.9.8",
+    "nodemon": "^1.11.0"
+  }
+}

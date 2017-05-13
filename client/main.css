@@ -1,0 +1,56 @@
+body, html{
+  height: 100%;
+}
+
+body{
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/20/e9/95/20e995b3230740e1051c509c12a01f3d.jpg");
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label{
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+main{
+  width: 80vw;
+  margin: 0 auto;
+}
+
+form input {
+  margin: 1rem;
+}
+
+.textbox{
+  max-width: 200px;
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.textbox input{
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid blue;
+}
+
+.textbox input:focus{
+  outline: none;
+}
+
+.textbox input:focus ~ .highlight {
+  animation: inputHighlight 0.3s ease;
+}
