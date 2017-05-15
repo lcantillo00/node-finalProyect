@@ -18,11 +18,24 @@ var updateProducts=function(){
    var productData=stocks[stocks.length-1];
    makeTemplate(productData);
 }
+//
+// var getValues= function(){
+//    var name=document.querySelector('input["#nombre_id"=namefood)]').value;
+//    var price=document.querySelector('input[type=number]').value;
+//    var symbol=document.querySelector('input[name=symbol]').value;
+//
+//    return {
+//        name:name,
+//        symbol:symbol,
+//        price:price
+//    };
+// };
 
 var getValues= function(){
    var name=document.querySelector('input[name=namefood]').value;
-   var price=document.querySelector('input[type=number]').value;
-   var symbol=document.querySelector('input[name=symbol]').value;
+   var price=document.querySelector('#price').value;
+
+   var symbol=document.querySelector('#symbol').value;
 
    return {
        name:name,
@@ -50,38 +63,7 @@ var getAllProducts= function(){
    });
 
 };
-// $('#showTables').click(function(e) {
-//         e.preventDefault();
-//                     $.ajax({
-//                         url: "http://localhost:8890/",
-//                         method: 'GET',
-//                         success: function (resp) {
-//                             console.log(resp);
-//                             $('#tables1').html("");
-//                             resp.forEach(function(stok){
-//
-//
-//                                 $('#tables1').append(`<tr class="tdT"><td class="tdT">${stok.name}</td>+<td class="tdT">${stok.price}+<td class="tdT">${stok.symbol}<button class='delete' idendb='${stok.id}'>DELETE</button></td></tr>`);
-//
-//                             })
-//                         }
-//
-//       });
-// });
-// $('#submit').click(function() {
-//         $.ajax({
-//             url: "http://localhost:8887/",
-//             method: 'POST',
-//             success: function() {
-//                 console.log("yous data is been post")
-//             },
-//             data: {
-//                 description: $('#description').val(),
-//                 status: $('#status').val()
-//             }
-//
-//         });
-//     });
+
 (function(){
    getAllProducts();
    var form=document.querySelector('form');
@@ -105,6 +87,7 @@ var getAllProducts= function(){
            console.log(stocks);
            updateProducts();
        })
+       location.reload();
        return false;
    })
 
