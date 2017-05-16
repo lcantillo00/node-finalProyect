@@ -84,7 +84,7 @@ form input {
   animation: inputHighlight 0.3s ease;
 }
 table { width: 640px;
-    margin-left:100px;
+    margin-left:250px;
        text-align: center;
     } /* Make table wider */
 td, th { border: 1px solid #CCC; } /* Add borders to cells */
