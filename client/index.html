@@ -8,28 +8,47 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <form class="form">
-      <div class="food">
-          <label>Name</label>
-          <input id="namefood"type="text" name="namefood">
-      </div>
-      <div class="food">
-          <label>Price</label>
-          <input id="price"type="number" name="price">
-      </div>
-      <div class="food">
-          <label>Symbol</label>
-          <input id="symbol"type="text" name="symbol">
-      </div>
 
-      <button class="submit" id="submit">Submit</button>
-      <!-- <button id="showTables">Show Stock Products</button> -->
+    <ul class="nav nav-tabs">
+  <h2><a href="#second">Add new Stock</a></h2>
+</ul>
 
-      <div class="content">
-      <ul class="food-list"></ul>
-       </div>
+     <section id="show" class="show">
+         <h1 class="myh1">Update Stock </h1>
+       <table class="stock-table" id="stock-table">
+           <td id="tdname">Name</td>
+           <td id="tdprice"> Price</td>
+           <td id="tdsymbol">Symbol</td>
 
-  </form>
+       </table>
+
+     </section>
+
+    <section id="second" class="second">
+        <form class="form">
+          <div class="food">
+              <label>Name</label>
+              <input id="namefood"type="text" name="namefood">
+          </div>
+          <div class="food">
+              <label>Price</label>
+              <input id="price"type="number" name="price">
+          </div>
+          <div class="food">
+              <label>Symbol</label>
+              <input id="symbol"type="text" name="symbol">
+          </div>
+
+          <button class="submit" id="submit">Submit</button>
+          <!-- <button id="showTables">Show Stock Products</button> -->
+
+          <div class="content">
+          <ul class="food-list"></ul>
+           </div>
+
+      </form>
+    </section>
+
   <!-- <table id="tables">
           <tr class="mytr">
               <td id="tdName">Name</td>
@@ -41,6 +60,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="app.js"></script>
-
+<script src="app2.js"></script>
 </body>
 </html>

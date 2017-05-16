@@ -4,6 +4,7 @@ body, html{
 
 body{
   background-image: url("https://s-media-cache-ak0.pinimg.com/originals/20/e9/95/20e995b3230740e1051c509c12a01f3d.jpg");
+ font-family: sans-serif;
 }
 
 form {
@@ -11,6 +12,34 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+li, a{
+    padding: 20px;
+    color: white;
+}
+.myh1{
+    text-align: center;
+}
+section {
+
+    min-height: 100vh;
+    width: 100vw;
+    max-width: none;
+    color:white;
+    /*background-image: url('./web-developer-3.jpg');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body {
+  padding-top: 50px;
+}
+h1{
+    margin-left: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
 }
 
 label{
@@ -54,3 +83,8 @@ form input {
 .textbox input:focus ~ .highlight {
   animation: inputHighlight 0.3s ease;
 }
+table { width: 640px;
+    margin-left:100px;
+       text-align: center;
+    } /* Make table wider */
+td, th { border: 1px solid #CCC; } /* Add borders to cells */

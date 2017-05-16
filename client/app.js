@@ -18,35 +18,24 @@ var updateProducts=function(){
    var productData=stocks[stocks.length-1];
    makeTemplate(productData);
 }
-//
-// var getValues= function(){
-//    var name=document.querySelector('input["#nombre_id"=namefood)]').value;
-//    var price=document.querySelector('input[type=number]').value;
-//    var symbol=document.querySelector('input[name=symbol]').value;
-//
-//    return {
-//        name:name,
-//        symbol:symbol,
-//        price:price
-//    };
-// };
 
 var getValues= function(){
    var name=document.querySelector('input[name=namefood]').value;
    var price=document.querySelector('#price').value;
 
    var symbol=document.querySelector('#symbol').value;
-
+    // var id=document.querySelector('#id').value;
    return {
        name:name,
        symbol:symbol,
-       price:price
+       price:price,
+    //    id:id
    };
 };
 var makeList=function(){
    stocks.forEach(function(product){
        makeTemplate(product);
-       console.log(product);
+    //    console.log(product);
    });
 };
 
@@ -58,7 +47,7 @@ var getAllProducts= function(){
    })
    .then(function(data){
        stocks=stocks.concat(data);
-       console.log(stocks);
+    //    console.log(stocks);
        makeList();
    });
 
@@ -67,10 +56,12 @@ var getAllProducts= function(){
 (function(){
    getAllProducts();
    var form=document.querySelector('form');
+   // var btn=document.querySelector('#submit')
    form.addEventListener('submit',function(e){
        e.preventDefault();
+    //    console.log(form);
        var values=getValues();
-       console.log(values);
+    //    console.log(values);
        fetch('/createStock',{
            method:'post',
            headers:{
@@ -84,11 +75,52 @@ var getAllProducts= function(){
        })
        .then(function(createdProduct){
            stocks.push(createdProduct);
-           console.log(stocks);
+        //    console.log(stocks);
            updateProducts();
        })
        location.reload();
        return false;
    })
-
+   // document.getElementById("btnShow").addEventListener('get',function(e){
+   //     e.preventDefault();
+   //     getAllProducts();
+   //     var values=getValues();
+   //     console.log("dfrgh");
+   //
+   //     var getAllProducts= function(){
+   //        fetch('/stock')
+   //        .then(function(resp){
+   //            return resp.json();
+   //
+   //        })
+   //        .then(function(data){
+   //            stocks=stocks.concat(data);
+   //            console.log(stocks);
+   //            makeList();
+   //        });
+   //
+   //     };
+   // });
+// document.getElementById("id").addEventListener("DELETE", function(e){
+//     e.preventDefault();
+//     var values=getValues();
+//     fetch('/stock/:id',{
+//         method:'delete',
+//         headers:{
+//             'Accept':'application/json',
+//             'Content-Type':'application/json'
+//         },
+//         body:JSON.stringify(values)
+//     })
+//     .then(function(deleteStock){
+//         stock.remove({
+//             _id:req.params.id
+//         },function(err,stock){
+//             if(err){
+//                 res.send(err);
+//             }
+//             res.json({message:'delete stock'});
+//         });
+//     });
+// });
 })();
